@@ -15,6 +15,15 @@ public class Artist {
     private int artistID;
     Connection connection;
 
+
+    public Artist() throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/laboration3";
+        String user = "Philippe";
+        String password = "Password123";
+        connection = DriverManager.getConnection(url, user, password);
+        statement = connection.createStatement();
+    }
+
     public void runApp() throws SQLException {
         boolean run = true;
         while (run) {
@@ -71,14 +80,6 @@ public class Artist {
             scanner.next();
         }
         return scanner.next();
-    }
-
-    public void connection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/laboration3";
-        String user = "Philippe";
-        String password = "Password123";
-        connection = DriverManager.getConnection(url, user, password);
-        statement = connection.createStatement();
     }
 
     private void artistInfoInput() {
