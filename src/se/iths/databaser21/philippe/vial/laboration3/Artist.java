@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 
-public class Labb3 {
+public class Artist {
 
     Scanner scanner = new Scanner(System.in);
     ResultSet resultSet;
@@ -16,17 +16,8 @@ public class Labb3 {
     Connection connection;
 
 
-    public static void main(String[] args) {
-        Labb3 labb = new Labb3();
-        try {
-            labb.connection();
-            labb.runLoop();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
-    private void runLoop() throws SQLException {
+    public void runApp() throws SQLException {
         boolean run = true;
         while (run) {
             menuChoices();
@@ -65,6 +56,7 @@ public class Labb3 {
         return run;
     }
 
+
     private int inputReadInteger(String output) {
         System.out.println(output);
         while (!scanner.hasNextInt()) {
@@ -83,7 +75,7 @@ public class Labb3 {
         return scanner.next();
     }
 
-    private void connection() throws SQLException {
+    public void connection() throws SQLException {
         String url = "jdbc:mysql://localhost:3306/laboration3";
         String user = "Philippe";
         String password = "Password123";
