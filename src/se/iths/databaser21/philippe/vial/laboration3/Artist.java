@@ -15,8 +15,6 @@ public class Artist {
     private int artistID;
     Connection connection;
 
-
-
     public void runApp() throws SQLException {
         boolean run = true;
         while (run) {
